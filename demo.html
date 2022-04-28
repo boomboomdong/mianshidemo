@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let nums1 = [
+        //     { value: 2 },
+        //     { value: 8 },
+        //     { value: 5 },
+        //     { value: 10 },
+        //     { value: -1 },
+        //     { value: 9 },
+        // ]
+        // var m = 1
+        // let nums2 = [{ value: 2 }, { value: 5 }, { value: 6 }, { value: 30 }]
+        // var n = 15;
+        // function concatArr(arr1, m, arr2, m) {
+        //     let aa = arr1.filter(item => {
+        //         return item.value > this.m
+        //     })
+        //     let bb = arr2.filter(item => {
+        //         return item.value < this.n
+        //     })
+        //     let cc = aa.concat(bb)
+        //     cc.forEach((item, index, cc) => {
+        //         cc[index] = item.value
+        //     })
+        //     for (var i = 0; i < cc.length - 1; i++) {
+        //         for (var j = 0; j < cc.length - i - 1; j++) {
+        //             if (cc[j] < cc[j + 1]) {
+        //                 let ee = cc[j]
+        //                 cc[j] = cc[j + 1]
+        //                 cc[j + 1] = ee;
+        //             }
+        //         }
+        //     }
+        //     let dd = Array.from(new Set(cc))
+        //     dd.forEach((item, index, dd) => {
+        //         dd[index] = { "value": item }
+        //     })
+        //     return dd
+        // }
+        // console.log(concatArr(nums1, m, nums2, n));
+
+        // { value: 10 },
+        //         { value: 9 },
+        //         { value: 8 },
+        //         { value: 6 },
+        //         { value: 5 },
+        //         { value: 2 }, 
+
+        function printList(list, delay) {
+            let aa = list.split(/\s+/);
+            let delays = delay;
+            if (aa.length > 5) {
+                for (let i = 0; i < aa.length; i++) {
+                    let cc = aa[i].split('').reverse().join("")
+                    setTimeout(function () {
+                        console.log(cc);
+                    }, delays * 1000 * i)
+                }
+            } else {
+                for (let i = 0; i < aa.length; i++) {
+                    setTimeout(function () {
+                        console.log(aa[i]);
+                    }, delays * 1000 * i)
+                }
+            }
+        }
+        printList("This is a test ", 5);
+
+    </script>
+</body>
+
+</html>
